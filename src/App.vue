@@ -1,19 +1,28 @@
 <template>
-  
+     <authorization-form></authorization-form>
 </template>
 
 <script>
+import AuthorizationForm from "./components/AuthorizationForm";
+
 export default {
   data() {
-    return {
-    };
+    return {};
   },
-  components: {
-    
-  }
+  components: { AuthorizationForm }
 };
 </script>
 
 <style>
+
+.auth-form-all-mers{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items:center; 
+  justify-content: center;
+}
+
+/*  Before */
 
 </style>

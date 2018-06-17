@@ -10,14 +10,21 @@
 <script>
 export default {
   data() {
-    return{
+    return {
       userName: "",
       password: ""
-    }
+    };
   },
   methods: {
     createAccount: function() {
       this.$emit("createAccount", {});
+    },
+    login: function() {
+      var userData = {
+        userName: this.userName,
+        password: this.password
+      };
+      // ToDo: Add fetch
     }
   }
 };

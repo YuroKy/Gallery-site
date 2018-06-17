@@ -15,14 +15,24 @@ export default {
     return {
       userName: "",
       email: "",
-      password :"",
-      passwordConfrimation:""
-    }
+      password: "",
+      passwordConfrimation: ""
+    };
   },
-  methods:{
+  methods: {
     alredyRegistered: function() {
-      this.$emit("alredyRegistered",{});
-      console.log("alredy")
+      this.$emit("alredyRegistered", {});
+      console.log("alredy");
+    },
+    register: function() {
+      var userData = {
+        userName: this.userName,
+        email: this.email,
+        password: this.password,
+        passwordConfrimation: this.passwordConfrimation
+      };
+      
+      // ToDo: Add fetch
     }
   }
 };

@@ -5,7 +5,7 @@
         <input type="password" placeholder="Password" v-model="password"/>
         <input type="password" placeholder="Confirm password" v-model="passwordConfrimation"/>
         <button>create</button>
-        <p class="message">Already registered? <a href="#">Sign In</a></p>
+        <p class="message" v-on:click="alredyRegistered">Already registered? <a href="#">Sign In</a></p>
     </form>
 </template>
 
@@ -17,7 +17,13 @@ export default {
       email: "",
       password :"",
       passwordConfrimation:""
-    };
+    }
+  },
+  methods:{
+    alredyRegistered: function() {
+      this.$emit("alredyRegistered",{});
+      console.log("alredy")
+    }
   }
 };
 </script>

@@ -1,7 +1,8 @@
 <template>
 <div class="login-page">
    <div class="form">
-     <authorization-form-registration></authorization-form-registration>
+      <authorization-form-registration v-show="!registered"  @alredyRegistered="alredyRegistered"></authorization-form-registration>
+      <authorization-form-login v-show="registered" @createAccount="createAccount"></authorization-form-login>
   </div> 
 </div>
 </template>
@@ -12,17 +13,23 @@ import AuthorizationFormRegistration from "./AuthorizationFormRegistration";
 
 export default {
   data() {
-    return {};
+    return {
+      registered: false
+    };
   },
   components: {
     AuthorizationFormLogin,
     AuthorizationFormRegistration
+  },
+  methods: {
+    alredyRegistered: function() {
+      this.registered = true;
+    },
+    createAccount: function() {
+      this.registered = false;
+    }
   }
 };
-
-$(".message a").click(function() {
-  $("form").animate({ height: "toggle", opacity: "toggle" }, "slow");
-});
 </script>
 
 <style>
@@ -87,7 +94,8 @@ $(".message a").click(function() {
   position: relative;
   z-index: 1;
   max-width: 300px;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 .container:before,
 .container:after {
@@ -117,17 +125,13 @@ $(".message a").click(function() {
 .container .info span .fa {
   color: #ef3b3a;
 }
-body,html {
+body,
+html {
   background-image: url("../assets/background.png");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
   height: 100%;
-  /*background: #76b852; /* fallback for old browsers */
-  /*background: -webkit-linear-gradient(right, #76b852, #8dc26f);
-  background: -moz-linear-gradient(right, #76b852, #8dc26f);
-  background: -o-linear-gradient(right, #76b852, #8dc26f);
-  background: linear-gradient(to left, #76b852, #8dc26f);*/
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

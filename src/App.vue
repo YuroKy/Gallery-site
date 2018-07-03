@@ -23,6 +23,4 @@ export default {
   justify-content: center;
 }
 
-/*  Before */
-
 </style>

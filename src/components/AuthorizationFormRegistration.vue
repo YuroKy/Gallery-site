@@ -7,6 +7,7 @@
         <button v-on:click="register">create account</button>
         <p class="message" v-on:click="alredyRegistered">Already registered? <a href="#">Sign In</a></p>
     </div>
+
 </template>
 
 <script>
@@ -43,6 +44,7 @@ export default {
 
       var url = apiUrl + "account/register";
       fetch(url, request).then(response => console.log(response));
+
     }
   }
 };

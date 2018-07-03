@@ -26,6 +26,7 @@ export default {
       this.registered = true;
     },
     createAccount: function() {
+
       this.registered = false;
     }
   }

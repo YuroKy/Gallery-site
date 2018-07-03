@@ -2,12 +2,13 @@
     <form class="login-form">
       <input type="text" placeholder="username" v-model="userName"/>
       <input type="password" placeholder="password" v-model="password"/>
-      <button>login</button>
+      <button v-on:click="login">login</button>
       <p v-on:click="createAccount" class="message">Not registered? <a href="#">Create an account</a></p>
     </form>
 </template>
 
 <script>
+import { apiUrl } from "../main.js";
 export default {
   data() {
     return {
@@ -24,7 +25,18 @@ export default {
         userName: this.userName,
         password: this.password
       };
-      // ToDo: Add fetch
+      const request = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userData)
+      };
+      var url = apiUrl + "account/login";
+      fetch(url, request)
+        .then(response => response.json())
+        .then(data => sessionStorage.setItem("accessToken", data.accessToken))
+        //.then(window.location.replace("http://mainpage.com")); ToDo
     }
   }
 };

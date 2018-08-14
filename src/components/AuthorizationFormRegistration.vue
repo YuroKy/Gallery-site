@@ -42,9 +42,8 @@ export default {
         body: JSON.stringify(userData)
       };
 
-      var url = apiUrl + "account/register";
-      fetch(url, request).then(response => console.log(response));
-
+      var url = apiUrl + "Account/Register";
+        fetch(url, request).then(response => console.log(response));
     }
   }
 };

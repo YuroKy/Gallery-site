@@ -35,8 +35,7 @@ export default {
       var url = apiUrl + "account/login";
       fetch(url, request)
         .then(response => response.json())
-        .then(data => sessionStorage.setItem("accessToken", data.accessToken))
-        //.then(window.location.replace("http://mainpage.com")); ToDo
+        .then(data => sessionStorage.setItem("accessToken", data.accessToken));
     }
   }
 };

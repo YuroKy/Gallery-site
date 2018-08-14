@@ -26,7 +26,6 @@ export default {
       this.registered = true;
     },
     createAccount: function() {
-
       this.registered = false;
     }
   }
@@ -136,5 +135,13 @@ html {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.auth-form-all-mers {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 }
 </style>

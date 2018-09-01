@@ -5,16 +5,18 @@
         <navbar></navbar>
       </div>
     </div>
-</div>
+        <portfolio></portfolio>
+    </div>
 </template>
 
 <script>
-import Navbar from "../components/Navbar"
+import Navbar from "../components/Navbar";
+import Portfolio from "../components/Portfolio";
 export default {
   data() {
     return {};
   },
-  components:{Navbar}
+  components: { Navbar, Portfolio }
 };
 </script>
 
